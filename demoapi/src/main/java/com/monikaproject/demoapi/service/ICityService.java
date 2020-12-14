@@ -7,7 +7,5 @@ public interface ICityService {
 
     public List<City> findAll();
     public Optional<City> findById(Long id);
-    void addCity(City city);
-    void updateCity(City city,Long id);
     void deleteCity(Long id);
 }

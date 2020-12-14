@@ -26,14 +26,7 @@ public class Mycontroller {
         Optional<City> city = cityService.findById(id);
         return city;
     }
-    @RequestMapping(method = RequestMethod.POST,value = "/cities")
-       public void addCity(@RequestBody City city) {
-        cityService.addCity(city);
-    }
-    @RequestMapping(method = RequestMethod.PUT,value = "/cities/{id}")
-    public void updateCity(@RequestBody City city,@PathVariable Long id) {
-        cityService.updateCity(city,id);
-    }
+
     @RequestMapping(method = RequestMethod.DELETE,value = "/cities/{id}")
     public void deleteCity(@PathVariable Long id) {
         cityService.deleteCity(id);

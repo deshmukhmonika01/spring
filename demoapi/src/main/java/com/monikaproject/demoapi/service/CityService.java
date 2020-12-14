@@ -26,14 +26,7 @@ public class CityService implements ICityService {
         Optional<City> city = repository.findById(id);
         return city;
     }
-    @Override
-    public void addCity(City city){
-        repository.save(city);
-    }
-    @Override
-    public void updateCity(City city,Long id){
-        repository.save(city);
-    }
+
     @Override
     public void deleteCity(Long id){
         repository.deleteById(id);
