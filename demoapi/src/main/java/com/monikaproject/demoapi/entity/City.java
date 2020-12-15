@@ -1,18 +1,16 @@
 package com.monikaproject.demoapi.entity;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 @Entity
 @Table(name = "cities")
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    @Column(name="NAME")
     private String name;
+    @Column(name="POPULATION")
     private int population;
 
     public City() {

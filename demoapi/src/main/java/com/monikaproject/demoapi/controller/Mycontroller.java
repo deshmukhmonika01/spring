@@ -32,5 +32,10 @@ public class Mycontroller {
         cityService.deleteCity(id);
     }
 
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public City addCity(@RequestBody City city) {
+        return cityService.add(city);
+    }
+
 }
 

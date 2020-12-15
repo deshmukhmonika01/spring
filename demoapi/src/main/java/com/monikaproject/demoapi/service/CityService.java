@@ -28,10 +28,18 @@ public class CityService implements ICityService {
     }
 
     @Override
-    public void deleteCity(Long id){
+    public void deleteCity(Long id) {
         repository.deleteById(id);
     }
 
-}
+    @Override
+    public City add(City city) {
+        City toAdd = new City();
+        toAdd.setName(city.getName());
+        toAdd.setPopulation(city.getPopulation());
+        City savedCity = repository.save(toAdd);
+        return savedCity;
 
+    }
+}
 
