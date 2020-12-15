@@ -6,9 +6,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class CityService implements ICityService {
@@ -44,6 +44,7 @@ public class CityService implements ICityService {
         return savedCity;
 
     }
+
     @Override
     public List<City> findAllOrderByPopulationAsc() {
         return repository.findAllOrderByPopulationAsc();
@@ -54,5 +55,17 @@ public class CityService implements ICityService {
         return repository.findAllOrderByNameAsc();
     }
 
-}
+    @Override
+    public List<City> findAllOrderByNameDesc() {
+        return repository.findAllOrderByNameDesc();
 
+    }
+    @Override
+    public Optional<City> findByPopulation(int population) {
+
+        Optional<City> city = repository.findByPopulation(population);
+        return city;
+    }
+    
+
+}

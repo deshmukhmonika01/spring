@@ -27,7 +27,7 @@ public class Mycontroller {
         return city;
     }
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "/cities/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/cities/{id}")
     public void deleteCity(@PathVariable Long id) {
         cityService.deleteCity(id);
     }
@@ -49,7 +49,18 @@ public class Mycontroller {
         return cityService.findAllOrderByNameAsc();
     }
 
+    @GetMapping(value = "/descending")
+    public List<City> getCitiesByNameDesc() {
+
+        return cityService.findAllOrderByNameDesc();
+    }
+
+    @RequestMapping("/{population}")
+    public Optional<City> findCityByPopulation(@PathVariable int population) {
+
+        Optional<City> city = cityService.findByPopulation(population);
+        return city;
+    }
 
 
 }
-
