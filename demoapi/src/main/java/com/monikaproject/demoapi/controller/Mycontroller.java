@@ -37,5 +37,19 @@ public class Mycontroller {
         return cityService.add(city);
     }
 
+    @GetMapping(value = "/population")
+    public List<City> getCitiesByPopulation() {
+
+        return cityService.findAllOrderByPopulationAsc();
+    }
+
+    @GetMapping(value = "/ascending")
+    public List<City> getCitiesByNameAsc() {
+
+        return cityService.findAllOrderByNameAsc();
+    }
+
+
+
 }
 

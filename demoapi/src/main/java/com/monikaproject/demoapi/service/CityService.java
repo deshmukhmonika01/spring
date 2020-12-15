@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -41,5 +44,15 @@ public class CityService implements ICityService {
         return savedCity;
 
     }
+    @Override
+    public List<City> findAllOrderByPopulationAsc() {
+        return repository.findAllOrderByPopulationAsc();
+    }
+
+    @Override
+    public List<City> findAllOrderByNameAsc() {
+        return repository.findAllOrderByNameAsc();
+    }
+
 }
 
